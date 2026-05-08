@@ -69,8 +69,7 @@ class TestAgregarAlCarrito(BaseTest):
     def test_agregar_no_duplica_items(self):
         self.add(1)
         self.add(1)
-        ids = [i['id'] for i in self.get_total()['items']]
-        self.assertEqual(ids.count(1), 1)
+        self.assertEqual(len(self.get_total()['items']), 1)
 
 
 # REMOVE
@@ -125,11 +124,10 @@ class TestTotal(BaseTest):
         self.assertEqual(data['total'], 4500)
 
     def test_descuento_no_aplica_bajo_15000(self):
-        self.add(1)  # $4500, no supera $15000
+        self.add(1) 
         self.assertEqual(self.get_total()['descuento'], 0)
 
     def test_descuento_aplica_sobre_15000(self):
-        # Producto 10: $7200 x3 = $21600 > $15000
         for _ in range(3):
             self.add(10)
         data = self.get_total()
