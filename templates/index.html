@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burger Stack - SPA</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="./static/styles.css">
+</head>
+<body>
+
+<header>
+    <h1>🍔 Burger Stack</h1>
+</header>
+
+<div class="container">
+    <!-- Listado de hamburguesas -->
+    <div id="menu">
+        <!-- Se llena con JS -->
+    </div>
+
+    <!-- Carrito -->
+    <div id="sidebar">
+        <h2>Tu Pedido</h2>
+        <div id="cart-content">
+            <p>El carrito está vacío</p>
+        </div>
+        <div class="total-box">
+            <p id="promo-banner" style="font-size:0.85rem; font-weight:bold; margin-bottom:8px;"></p>
+            <p>Subtotal: <span id="subtotal">$0</span></p>
+            <p>Descuento: <span id="discount">$0</span></p>
+            <h3>Total: <span id="total">$0</span></h3>
+            <button onclick="emptyCart()" class="btn-clear">🗑️ Vaciar Carrito</button>
+            <button onclick="confirmOrder()" class="btn-confirm">✅ Confirmar Pedido</button>
+        </div>
+    </div>
+</div>
+
+<script src="./static/main.js"></script>
+
+</body>
+</html>
